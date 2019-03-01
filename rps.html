@@ -6,83 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rock Paper Scissors Game!</title>
+    <!-- bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 
-<body>
+<body class="container-fluid bg-light">
 
-    <h1>Welcome to rock paper scissors game!</h1>
+    <div class="row justify-content-center p-4">
+        <h1 class="mainHeading">Rock. Paper. Scissors. SHOOT!</h1>
+    </div>
 
-    <script>
+    <div class="row justify-content-center p-4 text-center">
 
-        // variables for storing game data
+        <!-- dynamic content -->
 
-        var wins = 0;
-        var losses = 0;
-        var draws = 0;
-
-        // user input: whenever the user presses a key...
-
-        document.onkeyup = function (event) {
-
-            var userInput = event.key.toLowerCase();
-
-            var compChoices = ["r", "p", "s"];
-            var randomNum = (Math.floor(Math.random() * Math.floor(3)));
-            var compInput = compChoices[randomNum];
+        <div id="fluxContent" class="col-lg-4 border border-primary p-4">
+            <h2>Instructions:</h2>
+            <p>Press the "R" key to guess "Rock"</p>
+            <p>Press the "P" key to guess "Paper"</p>
+            <p>Press the "S" key to guess "Scissors"</p>
+        </div>
         
+    </div>
 
-            // game logic
+    <div id="fluxContent2" class="row justify-content-center pl-4 pr-4 text-center">
+    </div>
 
-            if (userInput === compInput) {
-                console.log(userInput)
-                console.log(compInput)
-                document.write("<h1>" + "It's a draw!" + "</h1>")
-            }
+    <div class="row justify-content-center p-4">
 
-            else if (userInput === "r" && compInput === "p") {
-                console.log(userInput)
-                console.log(compInput)
-                document.write("<h1>" + "You lose!" + "</h1>")
+            <button id="play" class="btn btn-primary m-4">Play!</button>
+            <button id="reset" class="btn btn-primary m-4">Reset</button>
 
-            }
+        </div>
 
-            else if (userInput === "r" && compInput === "s") {
-                console.log(userInput)
-                console.log(compInput)
-                document.write("<h1>" + "You win!" + "</h1>")
-
-            }
-
-            else if (userInput === "p" && compInput === "s") {
-                console.log(userInput)
-                console.log(compInput)
-                document.write("<h1>" + "You lose!" + "</h1>")
-
-            }
-
-            else if (userInput === "p" && compInput === "r") {
-                console.log(userInput)
-                console.log(compInput)
-                document.write("<h1>" + "You win!" + "</h1>")
-
-            }
-
-            else if (userInput === "s" && compInput === "r") {
-                console.log(userInput)
-                console.log(compInput)
-                document.write("<h1>" + "You lose!" + "</h1>")
-
-            }
-
-            else if (userInput === "r" && compInput === "p") {
-                console.log(userInput)
-                console.log(compInput)
-                document.write("<h1>" + "You win!" + "</h1>")
-
-            }
-        }
-
-    </script>
+    <script src="game.js"></script>
 
 </body>
 
