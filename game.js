@@ -25,6 +25,10 @@
         <p>Computer Score: ${losses}</p>
         <p>Draws: ${draws}</p>
         `;
+        fluxContent2.innerHTML = `
+        <h2>SHOOT!</h2>
+        <p>Press "R", "P" or "S"</p>
+        `
     };
 
     resetButton.addEventListener('click', function() {
@@ -62,11 +66,9 @@
                 wins += 1;
                 updateScoreboard();
                 fluxContent2.innerHTML = `
-                <div class="col-lg-4 border border-primary p-4">
+                <h2>You win!</h2>
                 <p>The Computer Guesed: ${wordify(compInput)}</p>
                 <p>You Guessed: ${wordify(userInput)}</p>
-                <p>You win!</p>
-                </div>
                 `;
             }
 
@@ -74,11 +76,9 @@
                 losses += 1;
                 updateScoreboard();
                 fluxContent2.innerHTML = `
-                <div class="col-lg-4 border border-primary p-4">
+                <h2>You Lose!</h2>
                 <p>The Computer Guesed: ${wordify(compInput)}</p>
                 <p>You Guessed: ${wordify(userInput)}</p>
-                <p>You Lose!</p>
-                </div>
                 `;
             }
 
@@ -86,11 +86,9 @@
                 draws += 1;
                 updateScoreboard();
                 fluxContent2.innerHTML = `
-                <div class="col-lg-4 border border-primary p-4">
+                <h2>It's a Draw!</h2>
                 <p>The Computer Guesed: ${wordify(compInput)}</p>
                 <p>You Guessed: ${wordify(userInput)}</p>
-                <p>It's a Draw!</p>
-                </div>
                 `;
 
             }
